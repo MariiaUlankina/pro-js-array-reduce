@@ -5,6 +5,13 @@
  Помните, что вы передаете функцию, которая ожидает 3 аргумента, текущий элемент, индекс и сам массив. Автоматическая проверка будет это учитывать.
 */
 function map(array, callback) {
+  const newArray = [];
+  array.reduce((prev, curr) => {
+    prev.push(callback(curr));
+    return prev;
+  },newArray);
+
+  return newArray;
 
 }
 
@@ -15,6 +22,15 @@ function map(array, callback) {
  Помните, что вы передаете функцию, которая ожидает 3 аргумента, текущий элемент, индекс и сам массив. Автоматическая проверка будет это учитывать.
 */
 function filter(array, callback) {
+  const newArray = [];
+  array.reduce((prev, curr) => {
+    if (callback(curr)){
+      prev.push(curr);
+    }
+    return prev;
+  },newArray);
+
+  return newArray;
 
 }
 

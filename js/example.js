@@ -12,16 +12,6 @@ const filterResult = filter(array, (item, index, array) => {
 
 console.log(filterResult); // => [2, 3]
 
-const reduceResult = reduce(
-  array,
-  (previous, current, index, array) => {
-    return previous + current;
-  },
-  0
-);
-
-console.log(reduceResult); // => 6
-
 const someResult = some(array, (item, index, array) => {
   return item > 2;
 });
@@ -32,4 +22,4 @@ const everyResult = every(array, (item, index, array) => {
   return item > 2;
 });
 
-console.log(someResult); // => false
+console.log(everyResult); // => false
