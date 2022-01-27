@@ -7,7 +7,7 @@
 function map(array, callback) {
   const newArray = [];
   array.reduce((prev, curr, index, array) => {
-    prev.push(callback(curr));
+    prev.push(callback(curr,index, array));
     return prev;
   },newArray);
 
@@ -24,7 +24,7 @@ function map(array, callback) {
 function filter(array, callback) {
   const newArray = [];
   array.reduce((prev, curr, index, array) => {
-    if (callback(curr)){
+    if (callback(curr,index, array)){
       prev.push(curr);
     }
     return prev;
