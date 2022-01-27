@@ -41,7 +41,13 @@ function filter(array, callback) {
  Помните, что вы передаете функцию, которая ожидает 3 аргумента, текущий элемент, индекс и сам массив. Автоматическая проверка будет это учитывать.
 */
 function some(array, callback) {
-
+  const result = array.reduce((prev, curr, index, array) => {
+    if (!prev){
+      return callback(curr, index, array);
+    }
+    return prev
+  }, false)
+  return result;
 }
 
 /* Функция принимает в себе первым аргументом массив, вторым функцию которая будет вызываться для каждого элемента массива
@@ -51,6 +57,16 @@ function some(array, callback) {
  Помните, что вы передаете функцию, которая ожидает 3 аргумента, текущий элемент, индекс и сам массив. Автоматическая проверка будет это учитывать.
 */
 function every(array, callback) {
+  const result = array.reduce((prev, curr, index, array) => {
+    if (!prev){
+      return prev;
+    }
+    else {
+      return callback(curr, index, array);
+    }
+    
+  }, false)
+  return result;
 
 }
 
