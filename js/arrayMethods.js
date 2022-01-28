@@ -61,11 +61,9 @@ function every(array, callback) {
     if (!prev){
       return prev;
     }
-    else {
       return callback(curr, index, array);
-    }
     
-  }, false)
+  }, true)
   return result;
 
 }
